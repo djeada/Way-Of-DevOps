@@ -12,6 +12,14 @@ Scripting:
 * powershell
 * python
 
+CI/CD:
+
+* jenkins
+* travis ci
+* github actions
+* gitlab actions
+* team city
+
 Tools: 
 
 * docker
