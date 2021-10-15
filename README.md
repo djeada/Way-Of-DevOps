@@ -1,10 +1,11 @@
 # DevOps
 
-Basics:
+Fundamentals:
 
 * git 
 * linux
 * networking
+* databases
 
 Scripting:
 
