@@ -6,6 +6,12 @@ Basics:
 * linux
 * networking
 
+Scripting:
+
+* bash
+* powershell
+* python
+
 Tools: 
 
 * docker
