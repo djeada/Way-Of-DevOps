@@ -36,3 +36,4 @@ Tools:
 * https://cloud.google.com/architecture/framework
 * https://sre.google/workbook/non-abstract-design/
 * https://docs.gitlab.com/ee/administration/reference_architectures/
+* https://github.com/codeaprendiz/devops-essentials
