@@ -26,3 +26,11 @@ Tools:
 * docker
 * ansible
 * terraform
+
+<h1>Bibliography</h1>
+* http://www.aosabook.org/en/distsys.html
+* https://fabrizio2210.medium.com/how-i-get-a-job-at-google-as-sre-83d44aef7859
+* http://highscalability.com/all-time-favorites/
+* https://aws.amazon.com/architecture/well-architected
+* https://cloud.google.com/architecture/framework
+* https://sre.google/workbook/non-abstract-design/
