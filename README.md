@@ -37,3 +37,5 @@ Tools:
 * https://sre.google/workbook/non-abstract-design/
 * https://docs.gitlab.com/ee/administration/reference_architectures/
 * https://github.com/codeaprendiz/devops-essentials
+* https://www.reddit.com/r/devops/comments/qsg5eq/ideas_for_a_side_project_blog_tutorial_showcasing/
+* https://www.reddit.com/r/devops/comments/r0hsyk/it_infrastructure_vs_devops/
