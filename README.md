@@ -31,6 +31,82 @@ AWS:
 
 * https://github.com/localstack/localstack
 
+
+What are you expected to know?
+
+    CI/CD
+
+    Security
+
+    Cloud
+
+    Scripting (Python, Go, Bash, Powershell, Ruby, etc)
+
+    Linux SysAdmin
+
+    Infrastructure as Code
+
+    Git
+
+    Database Administration
+
+    SQL
+
+    Containerization (Docker, Podman)
+
+    Orchestration (Kubernetes, ECS, etc
+
+    Computer networking
+
+    DNS
+
+
+DevOps:
+
+    The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
+
+    The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+
+    Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale
+
+    Site Reliability Engineering: How Google Runs Production Systems
+
+Infrastructure as Code:
+
+    Terraform: Up & Running: Writing Infrastructure as Code
+
+    Terraform in Action
+
+    Terraform and AWS (4 part LiveProject from Manning Publishing)
+
+    Ansible for DevOps: Server and Configuration Management for Humans by Jeff Geerling
+
+SysAdmin
+
+    UNIX and Linux System Administration Handbook
+
+    Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)
+
+    How Linux Works, 3rd Edition: What Every Superuser Should Know
+
+Git
+
+    Pro Git by Scott Chacon
+
+    Version Control with Git, 3rd Edition
+
+Docker / Kubernetes
+
+    Docker: Up & Running: Shipping Reliable Containers in Production
+
+    Docker in Practice, Second Edition
+
+    Docker in a Month of Lunches
+
+    Kubernetes up and running
+
+    Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud
+
 <h1>Bibliography</h1>
 
 * http://www.aosabook.org/en/distsys.html
