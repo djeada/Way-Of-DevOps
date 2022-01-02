@@ -119,3 +119,6 @@ Docker / Kubernetes
 * https://github.com/codeaprendiz/devops-essentials
 * https://www.reddit.com/r/devops/comments/qsg5eq/ideas_for_a_side_project_blog_tutorial_showcasing/
 * https://www.reddit.com/r/devops/comments/r0hsyk/it_infrastructure_vs_devops/
+* https://www.udemy.com/course/docker-mastery/
+* https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/
+* https://www.udemy.com/course/jenkins-from-zero-to-hero/
