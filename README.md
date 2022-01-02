@@ -27,6 +27,10 @@ Tools:
 * ansible
 * terraform
 
+AWS:
+
+* https://github.com/localstack/localstack
+
 <h1>Bibliography</h1>
 
 * http://www.aosabook.org/en/distsys.html
