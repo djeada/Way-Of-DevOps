@@ -122,3 +122,4 @@ Docker / Kubernetes
 * https://www.udemy.com/course/docker-mastery/
 * https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/
 * https://www.udemy.com/course/jenkins-from-zero-to-hero/
+* https://www.reddit.com/r/devops/comments/t2k58r/how_to_become_a_devops_engineer_in_2022/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
