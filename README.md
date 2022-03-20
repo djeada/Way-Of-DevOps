@@ -6,6 +6,10 @@ Fundamentals:
 * linux
 * networking
 * databases
+* Rest API/SOAP/graphQL
+* serverless
+* caching
+* monitoring
 
 Scripting:
 
@@ -26,6 +30,7 @@ Tools:
 * docker
 * ansible
 * terraform
+* k8s
 
 AWS:
 
