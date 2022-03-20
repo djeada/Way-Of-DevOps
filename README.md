@@ -129,3 +129,4 @@ Docker / Kubernetes
 * https://www.udemy.com/course/jenkins-from-zero-to-hero/
 * https://www.reddit.com/r/devops/comments/t2k58r/how_to_become_a_devops_engineer_in_2022/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
 * https://opengitops.dev/
+* https://github.com/bregman-arie/devops-exercises
