@@ -37,6 +37,9 @@ AWS:
 * https://github.com/localstack/localstack
 
 
+TODO:
+* https://github.com/MichaelCade/90DaysOfDevOps
+
 What are you expected to know?
 
     CI/CD
