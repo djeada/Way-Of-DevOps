@@ -115,7 +115,17 @@ Docker / Kubernetes
 
     Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud
 
-<h1>Bibliography</h1>
+Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
+
+Monitoring of the system for different metrics (can be combined with logging) - you wish to see if your application is using system resources normally or lagging back in performance or just wasting resources for nothing. Or you wish to make analysis on some events. Or you want to see the health state of your database and its connections. So you need monitoring. Tools that you can look into are: Micrometer, Prometheus and Grafana.
+
+CI/CD (Continuous Delivery and Continuous Integration) - it is a concept of automatizing the process of building a project, running tests automatically, running different checks on the software, deploying the software to different environments and also releasing it to production. Tools you can look into are: Github Actions / Jenkins / Teamcity. And from the checks side you can implement Sonar check, OWASP check and also integration with Upsource.
+
+Microservices (and communication between them) vs monolith - learn the concept of microservices. Most likely you will be building right now a monolith. Or if your company is developing microservices then you are not aware of it. So read about it. Also, if there exist already microservices then how to set up a communication between different microservices/modules? Tools you can look into are: Kafka, ActiveMQ, RabbitMQ, Kafka Connect.
+
+Orchestration and deployment methods - some companies are just dropping the application to client server and running it there. Others are using virtual machines. Third ones are using Docker. So you can look into how the web application be deployed and run in the client side. Also different methods require different means for maintenance. Don't know from the virtual machine side but from Docker side you can look into: Docker itself, Kubernetes, Docker Swarm.
+
+## Refrences
 
 * http://www.aosabook.org/en/distsys.html
 * https://fabrizio2210.medium.com/how-i-get-a-job-at-google-as-sre-83d44aef7859
