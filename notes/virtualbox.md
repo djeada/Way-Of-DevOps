@@ -35,3 +35,7 @@
 * Networking
 
 The VM itself and all its contents are stored in a file on a host operating system.
+
+## Network
+
+* Bridge: vm can connect to the internet as well as becomes an ip adress
