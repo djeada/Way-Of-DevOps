@@ -16,14 +16,15 @@ Scripting:
 * bash
 * powershell
 * python
+* go
 
 CI/CD:
 
 * jenkins
 * travis ci
 * github actions
-* gitlab actions
-* team city
+* gitlab CI/CD 
+* TeamCity
 
 Tools: 
 
