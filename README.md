@@ -6,7 +6,7 @@ Fundamentals:
 * linux
 * networking
 * databases
-* Rest API/SOAP/graphQL
+* HTTP APIs standards
 * serverless
 * caching
 * monitoring
