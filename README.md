@@ -1,5 +1,9 @@
 # DevOps
 
+TODO:
+* https://github.com/MichaelCade/90DaysOfDevOps
+
+
 Fundamentals:
 * git 
 * linux
@@ -16,6 +20,7 @@ Scripting:
 * go
 
 CI/CD:
+It is a concept of automatizing the process of building a project, running tests automatically, running different checks on the software, deploying the software to different environments and also releasing it to production. Tools you can look into are: Github Actions / Jenkins / Teamcity. And from the checks side you can implement Sonar check, OWASP check and also integration with Upsource.
 * Jenkins
 * Travis Ci
 * GitHub Actions
@@ -29,6 +34,7 @@ Containerization:
 * Podman
 
 Orchestration:
+some companies are just dropping the application to client server and running it there. Others are using virtual machines. Third ones are using Docker. So you can look into how the web application be deployed and run in the client side. Also different methods require different means for maintenance. Don't know from the virtual machine side but from Docker side you can look into: Docker itself, Kubernetes, Docker Swarm.
 * Kubernetes
 * ECS
 
@@ -39,17 +45,20 @@ Infrastructure as Code:
 * CloudFormation
 * Azure Resource Template
 
-Databases : 
+Databases:
+Learn what happens behind your SQL queries. There is a difference between an SQL query and an SQL query. Or a difference between a database table and a database table. One query is executed instantly. Another query can kill the application. One table is optimized for SQL queries. Another table is not. Then you can look into different database systems and which one to use and when. For example PostgreSQL, Redis, DynamoDB... Each of them has their own pros and cons and their own use cases.
 * SQL DB (SQL, Oracle, PostgreSQL, Aurora)
 * NoSQL DB (DynamoDB, Cosmos DB, Snowflake, Google Big Query)
+
+Microservices (and communication between them) vs monolith - learn the concept of microservices. Most likely you will be building right now a monolith. Or if your company is developing microservices then you are not aware of it. So read about it. Also, if there exist already microservices then how to set up a communication between different microservices/modules? Tools you can look into are: Kafka, ActiveMQ, RabbitMQ, Kafka Connect.
+
+Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
+
+Monitoring of the system for different metrics (can be combined with logging) - you wish to see if your application is using system resources normally or lagging back in performance or just wasting resources for nothing. Or you wish to make analysis on some events. Or you want to see the health state of your database and its connections. So you need monitoring. Tools that you can look into are: Micrometer, Prometheus and Grafana.
 
 AWS:
 
 * https://github.com/localstack/localstack
-
-
-TODO:
-* https://github.com/MichaelCade/90DaysOfDevOps
 
 Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
 
@@ -60,6 +69,10 @@ CI/CD (Continuous Delivery and Continuous Integration) - it is a concept of auto
 Microservices (and communication between them) vs monolith - learn the concept of microservices. Most likely you will be building right now a monolith. Or if your company is developing microservices then you are not aware of it. So read about it. Also, if there exist already microservices then how to set up a communication between different microservices/modules? Tools you can look into are: Kafka, ActiveMQ, RabbitMQ, Kafka Connect.
 
 Orchestration and deployment methods - some companies are just dropping the application to client server and running it there. Others are using virtual machines. Third ones are using Docker. So you can look into how the web application be deployed and run in the client side. Also different methods require different means for maintenance. Don't know from the virtual machine side but from Docker side you can look into: Docker itself, Kubernetes, Docker Swarm.
+
+Project management - right now you are simply doing the tasks you are given. But learn what happens behind the scenes. How it is decided which tasks the team is working on? How are the tasks itself created? Etc. Don't be just the person who is picking tasks but try to become the person who creates tasks and makes decisions what to work on and when.
+* Jira
+* Github Issues
 
 ## Refrences
 
