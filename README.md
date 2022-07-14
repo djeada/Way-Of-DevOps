@@ -19,12 +19,19 @@ Scripting:
 * go
 
 CI/CD:
-
-* jenkins
-* travis ci
-* github actions
-* gitlab CI/CD 
+* Jenkins
+* Travis Ci
+* GitHub Actions
+* Gitlab
 * TeamCity
+* AWS (Amazon Web Service) CloudFormation + AWS Code Pipeline
+* Azure DevOps
+
+Build and hosting technologies:
+bernetes, Docker )
+
+Infrastructure as Code tools
+Cross Plane, Terraform , CloudFormation, Azure Resource Template )
 
 Tools: 
 
