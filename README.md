@@ -1,18 +1,15 @@
 # DevOps
 
 Fundamentals:
-
 * git 
 * linux
 * networking
-* databases
 * HTTP APIs standards
 * serverless
 * caching
 * monitoring
 
 Scripting:
-
 * bash
 * powershell
 * python
@@ -27,18 +24,24 @@ CI/CD:
 * AWS (Amazon Web Service) CloudFormation + AWS Code Pipeline
 * Azure DevOps
 
-Build and hosting technologies:
-bernetes, Docker )
+Containerization:
+* Docker
+* Podman
 
-Infrastructure as Code tools
-Cross Plane, Terraform , CloudFormation, Azure Resource Template )
+Orchestration:
+* Kubernetes
+* ECS
 
-Tools: 
+Infrastructure as Code:
+* Ansible
+* Cross Plane
+* Terraform 
+* CloudFormation
+* Azure Resource Template
 
-* docker
-* ansible
-* terraform
-* k8s
+Databases : 
+* SQL DB (SQL, Oracle, PostgreSQL, Aurora)
+* NoSQL DB (DynamoDB, Cosmos DB, Snowflake, Google Big Query)
 
 AWS:
 
@@ -47,81 +50,6 @@ AWS:
 
 TODO:
 * https://github.com/MichaelCade/90DaysOfDevOps
-
-What are you expected to know?
-
-    CI/CD
-
-    Security
-
-    Cloud
-
-    Scripting (Python, Go, Bash, Powershell, Ruby, etc)
-
-    Linux SysAdmin
-
-    Infrastructure as Code
-
-    Git
-
-    Database Administration
-
-    SQL
-
-    Containerization (Docker, Podman)
-
-    Orchestration (Kubernetes, ECS, etc
-
-    Computer networking
-
-    DNS
-
-
-DevOps:
-
-    The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
-
-    The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
-
-    Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale
-
-    Site Reliability Engineering: How Google Runs Production Systems
-
-Infrastructure as Code:
-
-    Terraform: Up & Running: Writing Infrastructure as Code
-
-    Terraform in Action
-
-    Terraform and AWS (4 part LiveProject from Manning Publishing)
-
-    Ansible for DevOps: Server and Configuration Management for Humans by Jeff Geerling
-
-SysAdmin
-
-    UNIX and Linux System Administration Handbook
-
-    Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)
-
-    How Linux Works, 3rd Edition: What Every Superuser Should Know
-
-Git
-
-    Pro Git by Scott Chacon
-
-    Version Control with Git, 3rd Edition
-
-Docker / Kubernetes
-
-    Docker: Up & Running: Shipping Reliable Containers in Production
-
-    Docker in Practice, Second Edition
-
-    Docker in a Month of Lunches
-
-    Kubernetes up and running
-
-    Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud
 
 Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
 
@@ -151,3 +79,33 @@ Orchestration and deployment methods - some companies are just dropping the appl
 * https://www.reddit.com/r/devops/comments/t2k58r/how_to_become_a_devops_engineer_in_2022/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
 * https://opengitops.dev/
 * https://github.com/bregman-arie/devops-exercises
+
+## Literature
+
+### DevOps:
+* The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
+* The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+* Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale
+* Site Reliability Engineering: How Google Runs Production Systems
+
+### Infrastructure as Code:
+* Terraform: Up & Running: Writing Infrastructure as Code
+* Terraform in Action
+* Terraform and AWS (4 part LiveProject from Manning Publishing)
+* Ansible for DevOps: Server and Configuration Management for Humans by Jeff Geerling
+
+### SysAdmin
+* UNIX and Linux System Administration Handbook
+* Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)
+* How Linux Works, 3rd Edition: What Every Superuser Should Know
+
+### Git
+* Pro Git by Scott Chacon
+* Version Control with Git, 3rd Edition
+
+### Containers
+* Docker: Up & Running: Shipping Reliable Containers in Production
+* Docker in Practice, Second Edition
+* Docker in a Month of Lunches
+* Kubernetes up and running
+* Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud
