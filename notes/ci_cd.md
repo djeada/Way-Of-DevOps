@@ -122,3 +122,44 @@ Only for critical components we do canary mostly.
 ———
 - Do not rollback DB by SQL scripts but by Point-in-time recovery ( DB snapshot)
 
+
+
+## Probelms
+
+I need scripts to run on github webhooks just as bad as you do. But this one-size-fits-all "lets make scripts but in yaml" shit has got to go.
+
+Every CI/CD engine has a million different 'input' layers - environment variables, repo variables, workflows from various branches, maybe the git commit object. Oftentimes your scripts will have the ability to jam more variables into the 'input' layer for later scripts - such as in the case of the github environment variables. UNFORTUNATELY, it's never clear WHICH input layers are available to WHICH parts of the script. "Oh, no, you can't use outputs from this script to as arguments for something in our yaml, because the yaml is calculated first." Well thanks, Mr Nadella, I'll just torch my entire pipeline and start over.
+
+Every CI/CD engine is trying to have some sort of rudimentary 'secrets management', but that's not its core competency. There are always rules - "only 100 secrets", or "Secrets can't be passed from job to job," or "We allow secrets but you can only put them in via our GUI" or "We use hashicorp vault as a secrets backend but we didn't study the docs so we're just using their 'approle' backend as a username/password." Looking at you, Mr Tabib.
+
+Every CI/CD has obscure, insane 'defaults' left and right. "Oh, you ran a job that was called by another job called by another job, and everything succeeded, but one of the if statements didn't run? Our 100% proprietary fancy-pants no-source observer calls that a failure!"
+
+FOR GOD'S SAKE, YOU ARE A GLORIFIED SCRIPT RUNNER.
+
+I'm dying over here, you guys. What happened to the unix principle? What happened to each thing doing one thing really, really well and stringing it all together? Why does each CI/CD runner have a GUI and a CLI and two APIs and secrets management and slack integration and built in graphs and dashboards and runs shell scripts against my cappucino maker?!
+
+Like, SO MUCH of our CI/CD in every place I've ever been could be done with docker containers and python. Github pull request? Send a webhook to the container, run the scripts, fuck off. Am I missing a GUI I admit it might be a little irritating to build my own GUI, but everything else? Emailing people from a script? Slacking people from a script? Correctly gathering secrets from my vault instance from a script? CORRECTLY PASSING RETURN VALUES BETWEEN SCRIPTS?!
+
+But instead, I spend my days becoming a goddamn little cackling wizard on someone's particular dumbass piece of software with features we'll never use, hidden 'sane defaults' that get in the way, security that protects someone else, translating yaml to basic-bitch bash.
+
+We have saved so much headache by doing one simple thing with our CI pipelines: no scripting goes in the script block. Just call external scripts. Use whatever lang you want, however you want.\
+
+ep, this is it. This is all you need to keep in mind. This will cumulatively save 100s and 100s of hours. It really is that simple. It's worth being redundant about here, even though I'm not adding anything, because people rarely remember tips based on how much of a boost it is, but based on how much time they've spend thinking about it. Unfortunately, the time it takes to explain the concept of not putting scripting logic into ci/cd config, but instead, a script of its own, is not proportional with how awesome a tip it is, so for the benefit of everyone else:
+
+Do not put scripting logic in hard to test YAML.
+Do not put scripting logic in hard to test YAML.
+Do not put scripting logic in hard to test YAML.
+
+Put scripting logic in an easy-to-test script.
+
+Put scripting logic in an easy-to-test script.
+
+Put scripting logic in an easy-to-test script.
+
+Source: Learning this the hard way. I am in charge of tooling for a dev process, and have written 100s of scripts. In the beginning, I realized this, but I didn't realize how universal this rule is, and I let it get the better of me. Now I do my rosemary 20-chantings to drill it into my brain.
+
+My org still uses Jenkins, and it's because we take this approach. All our ci is defined in Makefiles, so all we use Jenkins for is basically just a webhook listener and GUI for parameters for manual executions.
+
+This also has the benefit that all of your pipeline code can be developed, tested, and controlled by proper GitOps processes. No more blocks of code inside yaml that can only be executed from the CI/CD engine.
+
+Also, goodbye costly vendor lock. My pipeline can run anywhere that can run containers.
