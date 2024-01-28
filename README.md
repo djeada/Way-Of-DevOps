@@ -4,6 +4,11 @@ TODO:
 * https://github.com/MichaelCade/90DaysOfDevOps
 * https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/
 
+PROJECTS:
+
+* SETUP APACHE
+* SETUP KERBEROS
+
 
 Fundamentals:
 * git 
