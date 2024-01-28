@@ -101,30 +101,32 @@ Project management - right now you are simply doing the tasks you are given. But
 
 ## Literature
 
-### DevOps:
-* The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
-* The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
-* Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale
-* Site Reliability Engineering: How Google Runs Production Systems
+## References
 
-### Infrastructure as Code:
-* Terraform: Up & Running: Writing Infrastructure as Code
-* Terraform in Action
-* Terraform and AWS (4 part LiveProject from Manning Publishing)
-* Ansible for DevOps: Server and Configuration Management for Humans by Jeff Geerling
+### DevOps
+1. Kim, G., Behr, K., & Spafford, G. *The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win*.
+2. Kim, G., Debois, P., Willis, J., & Humble, J. *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*.
+3. Davis, J. & Daniels, K. *Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale*.
+4. Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. *Site Reliability Engineering: How Google Runs Production Systems*.
+
+### Infrastructure as Code
+5. Brikman, Y. *Terraform: Up & Running: Writing Infrastructure as Code*.
+6. Morris, S. *Terraform in Action*.
+7. Manning Publishing. *Terraform and AWS* (4 part LiveProject).
+8. Geerling, J. *Ansible for DevOps: Server and Configuration Management for Humans*.
 
 ### SysAdmin
-* UNIX and Linux System Administration Handbook
-* Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)
-* How Linux Works, 3rd Edition: What Every Superuser Should Know
+9. Nemeth, E., Snyder, G., Hein, T. R., & Whaley, B. *UNIX and Linux System Administration Handbook*.
+10. van Vugt, S. *Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)*.
+11. Ward, B. *How Linux Works, 3rd Edition: What Every Superuser Should Know*.
 
 ### Git
-* Pro Git by Scott Chacon
-* Version Control with Git, 3rd Edition
+12. Chacon, S. & Straub, B. *Pro Git*.
+13. Loeliger, J. & McCullough, M. *Version Control with Git, 3rd Edition*.
 
 ### Containers
-* Docker: Up & Running: Shipping Reliable Containers in Production
-* Docker in Practice, Second Edition
-* Docker in a Month of Lunches
-* Kubernetes up and running
-* Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud
+14. Kane, S. & Matthias, K. *Docker: Up & Running: Shipping Reliable Containers in Production, 2nd Edition*.
+15. Moulton, I. & Moulton, D. *Docker in Practice, Second Edition*.
+16. Poulton, E. *Docker in a Month of Lunches*.
+17. Hightower, K., Burns, B., & Beda, J. *Kubernetes Up and Running*.
+18. Arundel, J. & Domingus, J. *Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud*.
