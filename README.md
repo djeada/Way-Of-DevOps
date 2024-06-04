@@ -1,5 +1,7 @@
 # DevOps
 
+A comprehensive roadmap for aspiring and experienced DevOps engineers, designed to guide you through the essential skills, tools, and practices needed to excel in the field of DevOps. This repository offers a structured path, covering a wide range of topics from foundational concepts to advanced techniques, providing valuable insights and resources for continuous learning and professional development.
+
 TODO:
 * https://github.com/MichaelCade/90DaysOfDevOps
 * https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/
