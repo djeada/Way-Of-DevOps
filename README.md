@@ -21,6 +21,8 @@ Fundamentals:
 * caching
 * monitoring
 
+* Ceph Storage
+
 Scripting:
 * bash
 * powershell
