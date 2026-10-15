@@ -1,0 +1,6 @@
+# DANGER: optional only for Lab 06/07. Docker socket control is roughly host-root.
+# Use only inside a dedicated disposable VM, NEVER your everyday host.
+services:
+  floci:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

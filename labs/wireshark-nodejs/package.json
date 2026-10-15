@@ -1,0 +1,22 @@
+{
+  "name": "wireshark-nodejs-labs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ten isolated classroom packet-analysis labs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/self-test.js",
+    "lab1": "node labs/01-tcp-handshake.js",
+    "lab2": "node labs/02-http-get.js",
+    "lab3": "node labs/03-http-post-json.js",
+    "lab4": "node labs/04-http-status.js",
+    "lab5": "node labs/05-udp-echo.js",
+    "lab6": "node labs/06-tcp-vs-udp.js",
+    "lab7": "node labs/07-tcp-framing.js",
+    "lab8": "node labs/08-local-dns.js",
+    "lab9": "node labs/09-https-tls.js",
+    "lab10": "node labs/10-troubleshooting.js"
+  }
+}

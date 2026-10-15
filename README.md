@@ -8,6 +8,8 @@ TODO:
 
 PROJECTS:
 
+* [Hands-on lab courses](labs/README.md) — 10 Floci cloud labs and 10 privacy-isolated Wireshark + Node.js labs
+
 * SETUP APACHE
 * SETUP KERBEROS
 

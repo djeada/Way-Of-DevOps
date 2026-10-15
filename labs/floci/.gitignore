@@ -1,0 +1,10 @@
+*.zip
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfplan
+response.json
+event.json
+result.json
+*.png
