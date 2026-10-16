@@ -1,138 +1,46 @@
-# DevOps
+# Way of DevOps
 
-A comprehensive roadmap for aspiring and experienced DevOps engineers, designed to guide you through the essential skills, tools, and practices needed to excel in the field of DevOps. This repository offers a structured path, covering a wide range of topics from foundational concepts to advanced techniques, providing valuable insights and resources for continuous learning and professional development.
+Notes and hands-on exercises for learning how to build, deliver, and operate software. Start with one small application and improve it step by step. The goal is to understand the work behind the tools: repeatable changes, useful feedback, secure access, and recovery when something fails.
 
-TODO:
-* https://github.com/MichaelCade/90DaysOfDevOps
-* https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/
+## Learning path
 
-PROJECTS:
+1. Learn the foundations: Git, [Linux and scripting](notes/linux_and_scripting.md), [networking and HTTP](notes/networking.md), and [virtual machines](notes/virtualbox.md).
+2. Follow an application from a developer's machine to a running service in [How a full-stack application reaches the cloud](notes/full_stack_app_with_cloud.md).
+3. Automate delivery with [CI/CD](notes/ci_cd.md), [continuous integration](notes/continuous_integration.md), and [GitHub Actions](notes/github_actions.md).
+4. Make environments reproducible with [cloud fundamentals](notes/cloud.md), [infrastructure as code](notes/terraform_and_iac.md), and [containers and orchestration](notes/containers_and_orchestration.md). Learn [which tool owns which task](notes/intro_to_tools.md) before adding more tools.
+5. Operate the service using [observability](notes/observability.md), [security and secrets](notes/security_and_secrets.md), [database operations](notes/best_practices.md), and [backup and recovery](notes/backup_and_recovery.md).
+6. Explore [canary releases](notes/canary_release.md), [GitOps](notes/git_ops.md), and [MLOps](notes/mlops.md) when the application needs them.
 
-* [Hands-on lab courses](labs/README.md) — 10 Floci cloud labs and 10 privacy-isolated Wireshark + Node.js labs
+The [notes index](notes/README.md) lists every topic, including practical guidance for small teams and existing infrastructure. You can follow the path in order or use it to fill a specific gap.
 
-* SETUP APACHE
-* SETUP KERBEROS
+## Practice
 
+- [Hands-on lab courses](labs/README.md): 10 Floci cloud labs and 10 Wireshark + Node.js networking labs. Follow each course's setup and isolation instructions.
+- [Apache example](servers/apache/README.md): serve a small website and inspect the server configuration.
+- [Project ideas](project_ideas.md): build a small application, then add delivery and operational capabilities.
 
-Fundamentals:
-* git 
-* linux
-* networking
-* HTTP APIs standards
-* serverless
-* caching
-* monitoring
+For each exercise, record how to start it, how to verify it works, what happens when a dependency fails, and how to clean it up. A working restore or a clear failure diagnosis is as useful as a successful deployment.
 
-* Ceph Storage
+## Scope and tool choices
 
-Scripting:
-* bash
-* powershell
-* python
-* go
+DevOps combines collaboration, software delivery, and operations. Teams share responsibility for changes throughout the application's life. Kubernetes, a cloud provider, or a particular pipeline product is a possible implementation choice.
 
-CI/CD:
-It is a concept of automatizing the process of building a project, running tests automatically, running different checks on the software, deploying the software to different environments and also releasing it to production. Tools you can look into are: Github Actions / Jenkins / Teamcity. And from the checks side you can implement Sonar check, OWASP check and also integration with Upsource.
-* Jenkins
-* Travis Ci
-* GitHub Actions
-* Gitlab
-* TeamCity
-* AWS (Amazon Web Service) CloudFormation + AWS Code Pipeline
-* Azure DevOps
+A useful starting stack is Git, a Linux environment, one scripting language, a CI runner, and a deployment target. Add a container runtime, configuration management, or an orchestrator when it solves a concrete problem. Track ownership and work in a shared issue tracker such as GitHub Issues or Jira, and include operational improvements alongside feature work.
 
-Containerization:
-* Docker
-* Podman
+These notes explain concepts and give small examples. They are not a complete production reference architecture. Service behavior and tool versions change; use the linked documentation when implementing a real system.
 
-Orchestration:
-some companies are just dropping the application to client server and running it there. Others are using virtual machines. Third ones are using Docker. So you can look into how the web application be deployed and run in the client side. Also different methods require different means for maintenance. Don't know from the virtual machine side but from Docker side you can look into: Docker itself, Kubernetes, Docker Swarm.
-* Kubernetes
-* ECS
+## Further reading
 
-Infrastructure as Code:
-* Ansible
-* Cross Plane
-* Terraform 
-* CloudFormation
-* Azure Resource Template
+- [Pro Git](https://git-scm.com/book/en/v2) for version control.
+- [Google's SRE books](https://sre.google/books/) for reliability, monitoring, and incident response.
+- [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected/) and [Google Cloud Well-Architected Framework](https://cloud.google.com/architecture/framework) for architecture reviews.
+- [OpenGitOps](https://opengitops.dev/) for the principles behind GitOps.
+- [90 Days of DevOps](https://github.com/MichaelCade/90DaysOfDevOps) and [DevOps exercises](https://github.com/bregman-arie/devops-exercises) for additional practice.
+- [The Cloud Resume Challenge](https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/) for an application-sized learning project.
 
-Databases:
-Learn what happens behind your SQL queries. There is a difference between an SQL query and an SQL query. Or a difference between a database table and a database table. One query is executed instantly. Another query can kill the application. One table is optimized for SQL queries. Another table is not. Then you can look into different database systems and which one to use and when. For example PostgreSQL, Redis, DynamoDB... Each of them has their own pros and cons and their own use cases.
-* SQL DB (SQL, Oracle, PostgreSQL, Aurora)
-* NoSQL DB (DynamoDB, Cosmos DB, Snowflake, Google Big Query)
+Choose books for the problem you are working on and check their examples against the relevant tool version:
 
-Microservices (and communication between them) vs monolith - learn the concept of microservices. Most likely you will be building right now a monolith. Or if your company is developing microservices then you are not aware of it. So read about it. Also, if there exist already microservices then how to set up a communication between different microservices/modules? Tools you can look into are: Kafka, ActiveMQ, RabbitMQ, Kafka Connect.
-
-Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
-
-Monitoring of the system for different metrics (can be combined with logging) - you wish to see if your application is using system resources normally or lagging back in performance or just wasting resources for nothing. Or you wish to make analysis on some events. Or you want to see the health state of your database and its connections. So you need monitoring. Tools that you can look into are: Micrometer, Prometheus and Grafana.
-
-AWS:
-
-* https://github.com/localstack/localstack
-
-Logging - if you are developing a web application then most likely you wish to have logs for different events and actions. So you can learn about logging libraries. How the log events can be modified (appenders). Then where the logs will be stored (log files or streamed directly to somewhere). Then what can be done with these logs (log analysis, statistics, alerts, etc). Tools that you can look into are: Filebeat, ELK stack (Elasticsearch, Logstash, Kibana) and Splunk/Humio.
-
-Monitoring of the system for different metrics (can be combined with logging) - you wish to see if your application is using system resources normally or lagging back in performance or just wasting resources for nothing. Or you wish to make analysis on some events. Or you want to see the health state of your database and its connections. So you need monitoring. Tools that you can look into are: Micrometer, Prometheus and Grafana.
-
-CI/CD (Continuous Delivery and Continuous Integration) - it is a concept of automatizing the process of building a project, running tests automatically, running different checks on the software, deploying the software to different environments and also releasing it to production. Tools you can look into are: Github Actions / Jenkins / Teamcity. And from the checks side you can implement Sonar check, OWASP check and also integration with Upsource.
-
-Microservices (and communication between them) vs monolith - learn the concept of microservices. Most likely you will be building right now a monolith. Or if your company is developing microservices then you are not aware of it. So read about it. Also, if there exist already microservices then how to set up a communication between different microservices/modules? Tools you can look into are: Kafka, ActiveMQ, RabbitMQ, Kafka Connect.
-
-Orchestration and deployment methods - some companies are just dropping the application to client server and running it there. Others are using virtual machines. Third ones are using Docker. So you can look into how the web application be deployed and run in the client side. Also different methods require different means for maintenance. Don't know from the virtual machine side but from Docker side you can look into: Docker itself, Kubernetes, Docker Swarm.
-
-Project management - right now you are simply doing the tasks you are given. But learn what happens behind the scenes. How it is decided which tasks the team is working on? How are the tasks itself created? Etc. Don't be just the person who is picking tasks but try to become the person who creates tasks and makes decisions what to work on and when.
-* Jira
-* Github Issues
-
-## Refrences
-
-* http://www.aosabook.org/en/distsys.html
-* https://fabrizio2210.medium.com/how-i-get-a-job-at-google-as-sre-83d44aef7859
-* http://highscalability.com/all-time-favorites/
-* https://aws.amazon.com/architecture/well-architected
-* https://cloud.google.com/architecture/framework
-* https://sre.google/workbook/non-abstract-design/
-* https://docs.gitlab.com/ee/administration/reference_architectures/
-* https://github.com/codeaprendiz/devops-essentials
-* https://www.reddit.com/r/devops/comments/qsg5eq/ideas_for_a_side_project_blog_tutorial_showcasing/
-* https://www.reddit.com/r/devops/comments/r0hsyk/it_infrastructure_vs_devops/
-* https://www.udemy.com/course/docker-mastery/
-* https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/
-* https://www.udemy.com/course/jenkins-from-zero-to-hero/
-* https://www.reddit.com/r/devops/comments/t2k58r/how_to_become_a_devops_engineer_in_2022/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
-* https://opengitops.dev/
-* https://github.com/bregman-arie/devops-exercises
-
-## Literature
-
-## References
-
-### DevOps
-1. Kim, G., Behr, K., & Spafford, G. *The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win*.
-2. Kim, G., Debois, P., Willis, J., & Humble, J. *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*.
-3. Davis, J. & Daniels, K. *Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale*.
-4. Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. *Site Reliability Engineering: How Google Runs Production Systems*.
-
-### Infrastructure as Code
-5. Brikman, Y. *Terraform: Up & Running: Writing Infrastructure as Code*.
-6. Morris, S. *Terraform in Action*.
-7. Manning Publishing. *Terraform and AWS* (4 part LiveProject).
-8. Geerling, J. *Ansible for DevOps: Server and Configuration Management for Humans*.
-
-### SysAdmin
-9. Nemeth, E., Snyder, G., Hein, T. R., & Whaley, B. *UNIX and Linux System Administration Handbook*.
-10. van Vugt, S. *Red Hat RHCSA 8 Cert Guide: EX200 (Certification Guide)*.
-11. Ward, B. *How Linux Works, 3rd Edition: What Every Superuser Should Know*.
-
-### Git
-12. Chacon, S. & Straub, B. *Pro Git*.
-13. Loeliger, J. & McCullough, M. *Version Control with Git, 3rd Edition*.
-
-### Containers
-14. Kane, S. & Matthias, K. *Docker: Up & Running: Shipping Reliable Containers in Production, 2nd Edition*.
-15. Moulton, I. & Moulton, D. *Docker in Practice, Second Edition*.
-16. Poulton, E. *Docker in a Month of Lunches*.
-17. Hightower, K., Burns, B., & Beda, J. *Kubernetes Up and Running*.
-18. Arundel, J. & Domingus, J. *Cloud Native DevOps with Kubernetes: Building, Deploying, and Scaling Modern Applications in the Cloud*.
+- Delivery and teamwork: The Phoenix Project, The DevOps Handbook, and Effective DevOps.
+- Linux and Git: UNIX and Linux System Administration Handbook, How Linux Works, and Version Control with Git.
+- Infrastructure: Terraform: Up & Running, Terraform in Action, and Ansible for DevOps.
+- Containers: Docker: Up & Running, Docker in Practice, Learn Docker in a Month of Lunches, Kubernetes: Up and Running, and Cloud Native DevOps with Kubernetes.

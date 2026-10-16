@@ -1,30 +1,34 @@
-> Canary release is a technique to reduce the risk of introducing a new software 
-version in production by 
-> slowly rolling out the change to a small subset of users before rolling it out to
-the entire 
-> infrastructure and making it available to everybody.
-Source: [martinfowler.com](https://martinfowler.com/bliki/CanaryRelease.html)
-Imagine you have two versions: 
-* Version A (the stable mainstream version)
-* Version B (the version containing a new feature)
-There are three ways you can implement the switch between the versions:
-* Via routing: You have one system and several servers. Some servers use version A,
-some version B. A router decides which server should handle the request
-* Via system: You have several systems (for example one system for each customer). 
-You can update the system of one customer to version B, while the other customers 
-use version A.
-* Via code: The source code contains both implementations. According to some 
-conditions either code version A or code version B gets executed. You usually use a
-feature-flag for this. This feature-flag can be set per user (or per customer).
-For example, you updating an internal tool, but you don't want to interrupt the 
-work of all developers.
-Since it is just for internal tooling, you can implement canary releasing in an 
-early adaptors list like this:
+# Canary releases
+
+A canary release exposes a change to a small part of production traffic before expanding it. Comparing that group with the stable version helps detect problems while limiting their initial impact.
+
+## Choose how to expose the change
+
+- Route a small share of requests to instances running the new version.
+- Upgrade a selected customer, region, or tenant first.
+- Use a feature flag to enable new behavior for a selected cohort.
+
+A feature flag controls behavior inside deployed code; a traffic-based canary controls which version handles requests. They can be used together. Keep a user's cohort stable when switching between versions would disrupt a session or produce inconsistent behavior.
+
+## Plan the rollout
+
+Before starting, choose the stable baseline, the initial cohort, the measurements, the observation window, and the stopping rules. An illustrative progression is 1%, 5%, 25%, then 100%, but the percentages and timing depend on traffic volume and risk.
+
+Compare error rate, latency, resource use, and a meaningful product signal such as successful checkout. Account for differences between cohorts: internal staff or one region may not represent all users. Low-volume services need a longer observation window or additional synthetic checks.
+
+Stop expansion when agreed limits are exceeded, investigate, and return traffic to the stable version when appropriate. Keep enough stable capacity to receive that traffic. Confirm that both versions can use the same database and messages during the transition.
+
+## Example with a feature flag
+
+```python
+def checkout(request, flags):
+    if flags.enabled("new-checkout", subject=request.user_id):
+        return new_checkout(request)
+    return existing_checkout(request)
 ```
-if user in ['thomas', 'peter', 'hugo', ....]:
- #### new way
-else:
- #### old way
-```
-This way you ensure to don't annoy colleagues with your great new, but not yet 
-mature features.
+
+This is illustrative pseudocode; `flags` represents a flag service or application configuration. Log the flag and version identifiers needed for diagnosis without exposing personal data. Restrict who can change production flags and remove obsolete branches after the rollout.
+
+A canary reduces exposure while evidence is collected. It cannot guarantee safety for rare failures, destructive data changes, or background jobs that bypass the traffic split.
+
+Related: [CI/CD](ci_cd.md) and [observability](observability.md). Reference: [Canary Release](https://martinfowler.com/bliki/CanaryRelease.html).

@@ -1,35 +1,41 @@
-AWS/Azure/GCP (Cloud)
+# Cloud fundamentals
 
-Each of these cloud providers offers over 100 services. There will not be enough time to know everything in detail. A considerable part of the services is quite unique and may never be encountered in work.
+Cloud providers offer compute, storage, networking, and managed services through APIs. Learn one provider well enough to build and operate a small system before trying to memorize several service catalogs.
 
-What is necessary to know:
+## Service models and responsibility
 
-How to set up a network: this may include services such as VPC, Security groups and ACLs, topology and subnets, peerings, VPN etc;
+- Infrastructure as a service (IaaS) gives you resources such as virtual machines and networks. You manage the guest operating system and application.
+- Platform as a service (PaaS) manages more of the runtime or database for you. You still own application behavior, data, configuration, and access.
+- Software as a service (SaaS) delivers a finished application that you configure and use.
 
-Virtual machine;
+Serverless services manage capacity and execution infrastructure behind an API. They still have quotas, failure modes, costs, and configuration responsibilities. The provider's shared-responsibility model varies by service; a managed service does not remove the need to understand it.
 
-IAM;
+## Concepts to learn first
 
-Storages: block and object storages;
+A region is a geographic deployment area. Availability zones are separate locations within a region, designed to limit the impact of some infrastructure failures. Multiple zones can improve availability; multiple regions add decisions about data replication, routing, and recovery.
 
-Container deployment services: ECS, AppRunner, Beanstalk, AppEngine, Web Apps, etc;
+Understand these building blocks:
 
-Database services (both relational and not);
+- Identity: users, workload roles, policies, temporary credentials, and audit logs.
+- Networking: virtual networks, subnets, routes, firewalls, DNS, load balancers, and private service access.
+- Compute: virtual machines, managed application runtimes, containers, and functions.
+- Storage: block storage for disks, file storage for shared files, and object storage for objects addressed by key.
+- Data: relational databases, key-value or document databases, caches, and queues.
 
-Managed Kubernetes cluster services;
+A subnet's name does not determine whether it is public. Routes, public addressing, firewalls, and service configuration determine reachability. Draw and verify the actual request path.
 
-Load Balancers, CDNs, WAFs.
+## Build one small system
 
-When building a cloud infrastructure, it is also helpful:
+Use a separate learning environment with synthetic data. Deploy an application, connect it to a database, give the application a limited workload identity, and expose only the intended entry point. Add TLS, health checks, logs, backups, and infrastructure code.
 
-Understand and know the various PaaS, IaaS, and SaaS. This knowledge can significantly speed up the start of the project without unnecessary steps;
+Keep development and production boundaries explicit. Check account, region, and identity before making changes. Reusing an infrastructure template creates a separate deployment; it does not automatically copy the application's data.
 
-Be able to migrate to clouds from on-premise and between clouds. It is necessary to calculate the capacity and cost correctly, choose the required services, develop and implement migration plan;
+The [Floci labs](../labs/floci/README.md) provide a local introduction to AWS-style APIs. Emulator behavior is useful for learning but does not establish production service or IAM parity.
 
-Constantly keep the Cost optimization paradigm in mind and apply cost reduction practices (spots, reserved, preemptible nodes, better and more efficient services or self-hosted solutions);
+## Cost and architecture
 
-Understand a Well-architected framework and be able to build infrastructure around it;
+Track ownership with tags or labels, set budget notifications, and inspect storage, network egress, idle resources, and logging costs. Budget alerts generally report spending rather than enforcing a hard spending limit. Interruptible capacity suits workloads that tolerate termination; reservations or commitments need a predictable demand forecast.
 
-Know how to build an infrastructure that meets certain compliances (iso 27001, PCI, GDPR, HIPAA) and is ready for audits;
+Before migrating, inventory dependencies, data volume, capacity, access requirements, recovery targets, and ongoing operating cost. Test a migration and its fallback before switching traffic. Review applicable legal and compliance requirements with the responsible people; provider certifications alone do not make an application compliant.
 
-Be able to effectively manage an extensive infrastructure (monthly check is over 10k and above).
+References: [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected/) and [Google Cloud Well-Architected Framework](https://cloud.google.com/architecture/framework).
