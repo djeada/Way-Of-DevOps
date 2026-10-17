@@ -1,0 +1,36 @@
+name: servers-labs
+
+services:
+  apache:
+    build:
+      context: ./apache
+    expose:
+      - "80"
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/ | grep -q 'Apache demo'"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  nginx:
+    image: nginx:1.28-alpine
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      apache:
+        condition: service_healthy
+    volumes:
+      - ./nginx/site:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/common.inc:/etc/nginx/conf.d/common.inc:ro
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/healthz | grep -qx ok"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s

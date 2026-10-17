@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apache demo | Home</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header><div class="shell"><p class="eyebrow">Behind the Nginx gateway</p><h1>Apache demo</h1><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div></header>
+  <main class="shell"><h2>One request, two servers</h2><p>This page is served by Apache httpd on the internal Compose network, through Nginx at <code>/apache/</code>.</p><p>Change this file and rebuild the Apache image to see the difference between an image and a bind mount.</p></main>
+  <footer class="shell">Local lab content — no real account or contact details.</footer>
+</body>
+</html>

@@ -15,8 +15,7 @@ The [notes index](notes/README.md) lists every topic, including practical guidan
 
 ## Practice
 
-- [Hands-on lab courses](labs/README.md): 10 Floci cloud labs and 10 Wireshark + Node.js networking labs. Follow each course's setup and isolation instructions.
-- [Apache example](servers/apache/README.md): serve a small website and inspect the server configuration.
+- [Hands-on lab courses](labs/README.md): 10 Floci cloud labs, 10 Wireshark + Node.js networking labs, and 10 [web server labs](labs/servers/README.md). Follow each course's setup and isolation instructions.
 - [Project ideas](project_ideas.md): build a small application, then add delivery and operational capabilities.
 
 For each exercise, record how to start it, how to verify it works, what happens when a dependency fails, and how to clean it up. A working restore or a clear failure diagnosis is as useful as a successful deployment.

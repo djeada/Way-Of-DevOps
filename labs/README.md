@@ -1,13 +1,17 @@
 # Hands-on DevOps lab courses
 
-The repository now includes two independently teachable 10-lab courses:
+The repository now includes three independently teachable 10-lab courses:
 
 | Course | Lab topics | Setup |
 |---|---|---|
 | [Floci local AWS emulator](floci/README.md) | S3, DynamoDB, SQS, SNS, Lambda, IAM, Terraform and an order-processing capstone | Docker Compose + AWS CLI; Terraform and **disposable VM** for advanced Lambda labs |
 | [Wireshark + Node.js](wireshark-nodejs/README.md) | TCP, HTTP, JSON, HTTP status, UDP, framing, DNS, TLS and troubleshooting | Docker image + Wireshark (viewer only), no cloud account |
+| [Web servers: Nginx + Apache](servers/README.md) | HTTP, containers, ports, static hosting, reverse proxies, TLS, headers, logs and recovery | Docker Compose + curl; OpenSSL for the TLS lab |
 
 ## Safety and recordings
+
+For web server exercises, bind host ports to 127.0.0.1, use only the disposable localhost certificate, and never put production data or credentials into the lab. See [server lab safety notes](servers/README.md#safety-and-scope).
+
 
 For Wireshark, use [Docker-isolated capture](wireshark-nodejs/ISOLATED_DOCKER.md) with `--network none`. Never record real Ethernet/Wi-Fi traffic for redistribution. Open the generated PCAP in the host Wireshark viewer; verify IPv4 endpoints remain `127.0.0.1` before sharing. Screen recordings themselves can still reveal identities, notifications or paths.
 
@@ -15,4 +19,4 @@ For Floci, the `aws-local` wrapper forces requests to local `127.0.0.1:4566` wit
 
 ## Verification
 
-Wireshark Node examples have functional smoke tests: `cd labs/wireshark-nodejs && npm test`. A Docker-capable computer is still required to verify packet-capture behavior. Floci operations and Lambda integration likewise require a live emulator; follow the per-lab evidence checks.
+Web server examples include a [local smoke test](servers/scripts/smoke-test.sh) requiring running Compose services. Wireshark Node examples have functional smoke tests: `cd labs/wireshark-nodejs && npm test`. A Docker-capable computer is still required to verify packet-capture behavior. Floci operations and Lambda integration likewise require a live emulator; follow the per-lab evidence checks.
