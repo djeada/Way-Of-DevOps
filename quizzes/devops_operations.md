@@ -47,7 +47,7 @@ Check your understanding of telemetry, SLOs, incident response, access and secre
 * [ ] 20,000
 * [ ] 1,998,000
 
-> **Explanation:** The error budget is the allowed failure fraction, 0.1%, of eligible requests: 0.001 × 2,000,000 = 2,000. Define which requests are eligible and what counts as success before calculating.
+> **Explanation:** The error budget is the allowed failure fraction, 0.1%, of eligible requests: $0.001 \times 2{,}000{,}000 = 2{,}000$. Define which requests are eligible and what counts as success before calculating.
 
 #### Q. Which situation justifies paging an on-call engineer immediately?
 
