@@ -7,7 +7,7 @@ Notes and hands-on exercises for learning how to build, deliver, and operate sof
 1. Learn the foundations: Git, [Linux and scripting](notes/linux_and_scripting.md), [networking and HTTP](notes/networking.md), and [virtual machines](notes/virtualbox.md).
 2. Follow an application from a developer's machine to a running service in [How a full-stack application reaches the cloud](notes/full_stack_app_with_cloud.md).
 3. Automate delivery with [CI/CD](notes/ci_cd.md), [continuous integration](notes/continuous_integration.md), and [GitHub Actions](notes/github_actions.md).
-4. Make environments reproducible with [cloud fundamentals](notes/cloud.md), [infrastructure as code](notes/terraform_and_iac.md), and [containers and orchestration](notes/containers_and_orchestration.md). Learn [which tool owns which task](notes/intro_to_tools.md) before adding more tools.
+4. Make environments reproducible with [cloud fundamentals](notes/cloud.md), [infrastructure as code](notes/terraform_and_iac.md), and [containers and orchestration](notes/containers_and_orchestration.md). Learn [which tool owns which task](notes/intro_to_tools.md) before adding more tools. Go deeper on one provider with [Google Cloud architecture](notes/gcp_cloud_architecture.md).
 5. Operate the service using [observability](notes/observability.md), [security and secrets](notes/security_and_secrets.md), [database operations](notes/best_practices.md), and [backup and recovery](notes/backup_and_recovery.md).
 6. Explore [canary releases](notes/canary_release.md), [GitOps](notes/git_ops.md), and [MLOps](notes/mlops.md) when the application needs them.
 
@@ -17,6 +17,11 @@ The [notes index](notes/README.md) lists every topic, including practical guidan
 
 - [Hands-on lab courses](labs/README.md): 10 Floci cloud labs, 10 Wireshark + Node.js networking labs, and 10 [web server labs](labs/servers/README.md). Follow each course's setup and isolation instructions.
 - [Project ideas](project_ideas.md): build a small application, then add delivery and operational capabilities.
+- Quizzes: multiple-choice self-checks with an explanation for every answer.
+  - DevOps: [foundations](quizzes/devops_foundations.md), [delivery](quizzes/devops_delivery.md), [infrastructure](quizzes/devops_infrastructure.md), and [operations](quizzes/devops_operations.md).
+  - Google Cloud Professional Cloud Architect: [foundations and security](quizzes/gcp_cloud_architect_foundations.md), [networking and compute](quizzes/gcp_cloud_architect_networking_and_compute.md), [data and reliability](quizzes/gcp_cloud_architect_data_and_reliability.md), and [operations, cost, and migration](quizzes/gcp_cloud_architect_operations_cost_and_migration.md).
+  - Take them interactively, with shuffled options and scoring, on the [Technical Quizzes](https://adamdjellouli.com/tools/quiz_app/?category=devops) page.
+- Flashcards: [DevOps](flashcards/devops.md) and [Google Cloud architecture](flashcards/gcp_cloud_architect.md) recall prompts, also available as [interactive flashcards](https://adamdjellouli.com/tools/flash_cards/?category=devops).
 
 For each exercise, record how to start it, how to verify it works, what happens when a dependency fails, and how to clean it up. A working restore or a clear failure diagnosis is as useful as a successful deployment.
 

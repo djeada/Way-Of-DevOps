@@ -21,6 +21,7 @@ Follow the groups below in order for a first pass. Each note covers one topic an
 ## Infrastructure
 
 - [Cloud fundamentals](cloud.md): service models, regions, identity, networking, and cost.
+- [Google Cloud architecture](gcp_cloud_architecture.md): resource hierarchy, IAM, networking, compute and data choices, reliability, security, cost, and migration, organised around the Professional Cloud Architect exam.
 - [Terraform and infrastructure as code](terraform_and_iac.md): plans, state, modules, and drift.
 - [Choosing infrastructure tools](intro_to_tools.md): provisioning, configuration, images, and orchestration.
 - [Containers and orchestration](containers_and_orchestration.md): images, persistent data, Compose, and Kubernetes.
