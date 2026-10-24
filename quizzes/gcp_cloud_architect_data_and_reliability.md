@@ -299,7 +299,7 @@ Check your understanding of storage classes and options, database choice, data p
 * [x] 99.7%
 * [ ] 99.99%
 
-> **Explanation:** Serial availabilities multiply: 0.999 × 0.999 × 0.999 ≈ 0.997. Each dependency in a chain reduces overall availability, which is why redundancy matters.
+> **Explanation:** Serial availabilities multiply: $0.999 \times 0.999 \times 0.999 \approx 0.997$. Each dependency in a chain reduces overall availability, which is why redundancy matters.
 
 #### Q. An application runs on a zonal managed instance group behind a load balancer. It must survive a zone outage with the smallest change. What should you do?
 
