@@ -1,0 +1,68 @@
+name: kerberos-apache-labs
+
+services:
+  kdc:
+    build:
+      context: .
+      target: kdc
+    hostname: kdc.lab.test
+    volumes:
+      - kdc-data:/var/lib/krb5kdc
+      - keytabs:/keytabs
+    networks:
+      lab:
+        aliases: [kdc.lab.test]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD-SHELL", "kinit -k -t /var/lib/krb5kdc/health.keytab -c FILE:/tmp/health.ccache health/kdc.lab.test && kdestroy -c FILE:/tmp/health.ccache"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  web:
+    build:
+      context: .
+      target: web
+    hostname: web.lab.test
+    depends_on:
+      kdc:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8448:443"
+    volumes:
+      - keytabs:/run/keytabs:ro
+      - tls:/run/tls
+      - ./apache/config:/etc/apache2/lab:ro
+      - ./apache/site:/var/www/lab:ro
+    networks:
+      lab:
+        aliases: [web.lab.test, public.lab.test]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD", "curl", "--noproxy", "*", "--fail", "--silent", "--cacert", "/run/tls/web.crt", "https://web.lab.test/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  client:
+    build:
+      context: .
+      target: client
+    depends_on:
+      web:
+        condition: service_healthy
+    volumes:
+      - tls:/run/tls:ro
+    networks: [lab]
+    security_opt: [no-new-privileges:true]
+
+networks:
+  lab:
+    internal: true
+
+volumes:
+  kdc-data:
+  keytabs:
+  tls:

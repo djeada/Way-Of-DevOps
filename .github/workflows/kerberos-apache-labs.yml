@@ -1,0 +1,44 @@
+name: Kerberos and Apache labs
+
+on:
+  pull_request:
+    paths:
+      - 'labs/kerberos-apache/**'
+      - '.github/workflows/kerberos-apache-labs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'labs/kerberos-apache/**'
+      - '.github/workflows/kerberos-apache-labs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: labs/kerberos-apache
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Start disposable lab services
+        run: docker compose up --build --detach --wait --wait-timeout 180
+      - name: Check authentication and authorization
+        run: bash scripts/smoke-test.sh
+      - name: Check KDC outage behavior
+        run: bash scripts/outage-test.sh
+      - name: Wait for recovery and check again
+        run: |
+          docker compose up --detach --wait --wait-timeout 120
+          bash scripts/smoke-test.sh
+      - name: Show service logs on failure
+        if: failure()
+        run: docker compose logs --no-color --tail=80
+      - name: Clean up
+        if: always()
+        run: docker compose down --volumes --remove-orphans
