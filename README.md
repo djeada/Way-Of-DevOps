@@ -15,7 +15,7 @@ The [notes index](notes/README.md) lists every topic, including practical guidan
 
 ## Practice
 
-- [Hands-on lab courses](labs/README.md): 10 Floci cloud labs, 10 Wireshark + Node.js networking labs, and 10 [web server labs](labs/servers/README.md). Follow each course's setup and isolation instructions.
+- [Hands-on lab courses](labs/README.md): 10 Floci cloud labs, 10 Wireshark + Node.js networking labs, 10 [web server labs](labs/servers/README.md), and 10 [Kerberos + Apache labs](labs/kerberos-apache/README.md). Follow each course's setup and isolation instructions.
 - [Project ideas](project_ideas.md): build a small application, then add delivery and operational capabilities.
 - Quizzes: multiple-choice self-checks with an explanation for every answer.
   - DevOps: [foundations](quizzes/devops_foundations.md), [delivery](quizzes/devops_delivery.md), [infrastructure](quizzes/devops_infrastructure.md), and [operations](quizzes/devops_operations.md).
